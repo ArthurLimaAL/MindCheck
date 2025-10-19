@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assents/Imagens/LogoMind.jpg">
+    <link rel="stylesheet" href="Cadastro.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap" rel="stylesheet">
+    <title>MindCheck</title>
+</head>
+
+<body class="container">
+    <!-- Primeira parte: Tela Boas vindas -->
+
+    <div class="CaixaBoasVindas visible" id="Tela1">
+        <h2>Mind Check</h2>
+        <div class="CaixaDoMédico">
+        </div>
+        <q>Descubra o que se passa na sua mente.</q>
+
+        <div class="Botoes">
+            <button onclick="MostrarCads()" id="btnC">Cadastrar</button>
+            <button onclick="MostrarLog()">Entrar</button>
+        </div>
+    </div>
+
+
+    <!-- Segunda parte: Tela de cadastro -->
+
+    <div class="CaixaDoFormulário escondida" id="FromCadastro">
+        <h2>Cadastro</h2>
+        <div class="Formulario">
+            <form id="formCadastro">
+                <label for="nomeCadastro">Nome:</label>
+                <input type="text" id="nomeCadastro" placeholder="Insira seu nome">
+                <div id="ErroCadastro" class="erro"></div>
+
+                <label for="idadeCadastro">Idade:</label>
+                <input type="number" id="idadeCadastro" placeholder="Idade" min="1" max="120">
+                <div id="ErroIdade" class="erro"></div>
+
+                <label for="emailCadastro">Email:</label>
+                <input type="email" id="emailCadastro" placeholder="Insira seu email">
+                <div id="ErroEmail" class="erro"></div>
+
+                <label for="senhaCadastro">Senha:</label>
+                <input type="password" id="senhaCadastro" name="senha" maxlength="4" placeholder="Insira sua senha">
+                <div id="ErroSenha" class="erro"></div>
+            </form>
+        </div>
+        <div class="BotoesF">
+            <button type="button" onclick="Voltar()">Voltar</button>
+            <button type="submit" form="formCadastro">Inscrever-se</button>
+        </div>
+    </div>
+
+    <!-- Terceira parte: Tela de login -->
+
+    <div class="CaixaDoLogin escondida" id="Loginn">
+        <h2>Login</h2>
+        <div class="FormLogin">
+            <form id="LogForm">
+                <label for="nomelog">Nome:</label>
+                <input type="text" placeholder="Insira seu nome" id="nomelog">
+                <div id="mensagemErro" class="erro"></div>
+
+                <label for="senhaLog">Senha:</label>
+                <input type="password" name="senha" placeholder="Insira sua senha" id="senhaLog" maxlength="4">
+                <div id="mensagemErroSenha" class="erro"></div>
+            </form>
+        </div>
+
+        <div class="BotoesL">
+            <button type="button" onclick="Voltar()">Voltar</button>
+            <button type="submit" form="LogForm">Entrar</button>
+        </div>
+    </div>
+
+    <!-- Quarta parte: Tela de carregamento -->
+    
+    <div class="carregamento escondida" id="carregamento">
+        <div class="carregando"></div>
+    </div>
+
+    <script src="Cadastro.js"></script>
+</body>
+
+</html>
