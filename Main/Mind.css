@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Playwrite+US+Modern:wght@400&family=Playwrite+DE+Grund:wght@400&family=Rancho&family=Fondamento:wght@400&display=swap');
+
+/* === Resets básicos === */
+:root {
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+body {
+    background-image: linear-gradient(#82d9ff, rgb(30, 150, 255));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateZ(0);
+    visibility: visible;
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
+
+.escondida {
+    opacity: 0;
+    transform: translateZ(20px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
+
+header {
+    background-color: #e7fcff;
+    padding: 1rem clamp(1rem, 3vw, 2rem);
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+header img {
+    height: clamp(3.5rem, 8vw, 5rem);
+    width: clamp(3.5rem, 8vw, 5rem);
+    border-radius: 50%;
+    border: 3px solid #00aeff;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+header h1 {
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    color: #00aeff;
+    margin: 0;
+    word-break: break-word;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    flex-wrap: wrap;
+    min-height: calc(100vh - 7rem);
+    width: 100%;
+}
+
+.CaixaPrincipal {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    max-width: 35rem;
+    border-radius: 1.5625rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    box-shadow: 0 0.5rem 0.625rem rgba(0, 0, 0, 0.212);
+}
+
+.CaixaPrincipal p {
+    text-align: center;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-family: "Playwrite US Modern", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0.5rem;
+    word-wrap: break-word;
+}
+
+.ImagemPrincipal {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ImagemPrincipal img {
+    max-width: 100%;
+    height: auto;
+    max-height: clamp(18rem, 40vh, 30rem);
+    display: block;
+}
+
+.botaoIniciar {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.IniciarBnt {
+    border: none;
+    background-color: #00aeff;
+    border-radius: 0.625rem;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: "Playwrite US Modern", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.IniciarBnt:hover {
+    background-color: rgb(182, 239, 255);
+    color: #00aeff;
+}
+
+.botaoExtra {
+    position: fixed;
+    z-index: 10;
+    top: 1rem;
+    right: 1rem;
+    padding: 0;
+}
+
+.botaoExtra button {
+    border: none;
+    background-color: #53cbff;
+    border-radius: 5px;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.8rem, 2vw, 1.25rem);
+    cursor: pointer;
+    color: white;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    transition: transform 0.2s ease, background-color 0.2s;
+    line-height: 1;
+}
+
+.botaoExtra button:hover {
+    transform: scale(1.05);
+    background-color: rgb(22, 195, 243);
+}
+
+/* === Parte extra escondida === */
+.Extras {
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 23, 58, 0.9);
+    z-index: 5;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.Extras h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    color: #5ccbff;
+    text-shadow: 0px 0px 4px rgb(50, 132, 255);
+    text-align: center;
+    font-family: "Rancho", cursive;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    padding: 0 1rem;
+    word-wrap: break-word;
+}
+
+.Extras h2 {
+    color: #5ccbff;
+    text-shadow: 0px 0px 4px rgb(30, 122, 243);
+    font-family: "Fondamento", cursive;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    margin-bottom: 0.4rem;
+    word-wrap: break-word;
+}
+
+.conteudo-extra {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 clamp(0.5rem, 2vw, 1rem) 2rem;
+}
+
+.infoMind-container,
+.irasutoya-container,
+.feedback-container,
+.Fontes-container {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-width: 0;
+}
+
+/* === animação de carregamento === */
+
+.carregamento {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.carregando {
+    width: 80px;
+    height: 80px;
+    border: 8px solid;
+    border-color: #ffffff transparent;
+    border-radius: 50%;
+    animation: load 1s linear infinite;
+}
+
+@keyframes load {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===  medias === */
+@media (min-width: 768px) {
+    .conteudo-extra {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .infoMind-container {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .irasutoya-container {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .feedback-container {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .Fontes-container {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+}
+
+.grid-item-conteudo {
+    background-color: aliceblue;
+    min-height: 10rem;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 1.25rem;
+    padding: clamp(0.6rem, 1.5vw, 0.8rem);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* === Informações === */
+.InfoH2 {
+    margin-top: 0;
+}
+
+.infoMind p {
+    font-family: "Playwrite DE Grund", cursive;
+    font-weight: 400;
+    text-align: center;
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.infoMind a {
+    color: #00aeff;
+    font-weight: bold;
+    word-break: break-word;
+}
+
+/* === Irasutoya === */
+.Irasutoya {
+    background-color: aliceblue;
+    background-image: url(../assents/Imagens/IrasutoyaPNG.png);
+    background-position: center 0.5rem;
+    background-size: clamp(5rem, 12vw, 7rem);
+    background-repeat: no-repeat;
+    padding-top: clamp(6rem, 15vw, 8rem);
+}
+
+.IrasutoyaH2 {
+    color: #00aeff;
+}
+
+.Irasutoya p {
+    font-family: "Playwrite DE Grund", cursive;
+    font-weight: 400;
+    text-align: center;
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* === Feedback === */
+.feedback-container {
+    align-items: center;
+}
+
+.feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.feedback form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.feedback textarea {
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    width: 100%;
+    height: 8rem;
+    background-color: white;
+    border: #005ec9 solid 2px;
+    border-radius: 0.625rem;
+    resize: vertical;
+    padding: 0.625rem;
+    font-family: inherit;
+}
+
+.FeedbackH2 {
+    margin-bottom: 0.4rem;
+}
+
+.feedback button {
+    margin-top: 0;
+    border: none;
+    background-color: #53cbff;
+    border-radius: 5px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    color: white;
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.feedback button:hover {
+    transform: scale(1.05);
+    background-color: rgb(22, 195, 243);
+}
+
+/* === Fontes === */
+.Fontes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Fontes p {
+    font-family: "Playwrite DE Grund", cursive;
+    font-weight: 400;
+    text-align: center;
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.FontesH2 {
+    margin-top: 0;
+}
+
+/* === Tablet === */
+@media (max-width: 992px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .CaixaPrincipal {
+        max-width: 90%;
+    }
+}
+
+/* === Mobile === */
+@media (max-width: 600px) {
+    :root {
+        font-size: 14px;
+    }
+
+    main {
+        min-height: calc(100vh - 5rem);
+    }
+
+    .CaixaPrincipal {
+        max-width: 95%;
+    }
+}

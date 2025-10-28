@@ -1,11 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Main/Mind.css">
+    <link rel="icon" href="../assents/Imagens/LogoMindCheck.png">
     <title>MindCheck</title>
 </head>
-<body>
-    <p>TESTE</p>
+
+<body id="TelaInicial">
+    <header>
+        <img src="../assents/Imagens/LogoMindCheck.png" alt="LogoMindCheck">
+        <h1>MindCheck</h1>
+    </header>
+    <main>
+        <div class="CaixaPrincipal">
+            <p>
+                Vamos descobrir o que se passa na sua mente
+            </p>
+            <p>
+                Com à ajuda do MindCheck
+            </p>
+            <div class="botaoIniciar">
+                <button class="IniciarBnt" id="IniciarBnt">Iniciar</button>
+            </div>
+        </div>
+        <div class="ImagemPrincipal">
+            <img src="../assents/Imagens/CharacterWoman1.png" alt="PersonagemMédica">
+        </div>
+    </main>
+
+    <div class="Extras escondida" id="Extras">
+
+        <h1>Extras</h1>
+
+        <div class="conteudo-extra">
+            <section class="infoMind-container">
+                <h2 class="InfoH2">Informações sobre o MindCheck</h2>
+                <div class="grid-item-conteudo infoMind"> <p>
+                        O laudo dado pelo MindCheck não deve ser usado como verdade absoluta, ainda que tenha sido feito buscas
+                        sobre as doênças mentais, para ser criado; caso você passe por problemas
+                        sérios ou qualquer outra dificuldade, você não está só, vale buscar ajuda profissional.
+                        Se preferir, pode entrar no site do cvv, alguém irá te ouvir gratuitamente.
+                        <a href="https://cvv.org.br/" target="_blank">CVV</a>
+                    </p>
+                </div>
+            </section>
+
+            <section class="irasutoya-container">
+                <h2 class="IrasutoyaH2">Personagens</h2>
+                <div class="grid-item-conteudo Irasutoya"> <p>
+                        Character Creator: Irasutoya
+                    </p>
+                </div>
+            </section>
+
+            <section class="feedback-container">
+                <h2 class="FeedbackH2">Nos envie um feedback!</h2>
+                <div class="grid-item-conteudo feedback">
+                    <form>
+                        <textarea placeholder="Digite seu feedback aqui..." id="InputFeedback"></textarea>
+                        <button onclick="FeedbackEnviar()" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="Fontes-container">
+                <h2 class="FontesH2">Fontes</h2>
+                <div class="grid-item-conteudo Fontes">
+                    <p>Fontes utilizadas para pesquisas</p>
+                    <br>
+                    <P>TJDFT <br>
+                        br.gsk <br>
+                        einstein.br <br>
+                        Psitto <br>
+                    </P>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="botaoExtra">
+        <button id="BntExtra"><b>☰</b></button>
+    </div>
+
+    <!-- Tela de carregamento escondida -->
+    <div class="carregamento escondida" id="carregamento">
+        <div class="carregando"></div>
+    </div>
+
+    <script src="../Main/Mind.js"></script>
 </body>
+
 </html>

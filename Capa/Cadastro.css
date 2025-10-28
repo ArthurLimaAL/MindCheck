@@ -8,7 +8,7 @@
 
 body {
     position: relative;
-    background-image: linear-gradient(rgb(193, 255, 255), rgb(105, 133, 255));
+    background-image: linear-gradient(#82d9ff, rgb(30, 150, 255));
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -48,7 +48,6 @@ body {
 
     opacity: 1;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    /* position causa erro no responsivo */
     position: fixed;
 
 }
@@ -239,6 +238,9 @@ body {
     .CaixaDoMédico {
         height: 150px;
         width: 150px;
+        background-image: url(../assents/Imagens/CharacterMale1.jpg);
+        background-position: -50px -0px;
+        background-size: 270px;
     }
 
     .Botoes button,
@@ -292,6 +294,9 @@ body {
     .CaixaDoMédico {
         height: 120px;
         width: 120px;
+        background-image: url(../assents/Imagens/CharacterMale1.jpg);
+        background-position: -50px -0px;
+        background-size: 230px;
     }
 
     .Botoes,
