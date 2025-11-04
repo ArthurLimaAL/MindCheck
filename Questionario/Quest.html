@@ -4,12 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Questionario/Quest.css">
     <link rel="icon" href="../assents/Imagens/LogoMindCheck.png">
     <title>MindCheck</title>
 </head>
 
 <body>
-    <p>TESTE</p>
+    <div class="caixRespostas visible" id="caixRespostas">
+        <!-- As respostas dessa div são preenchidas com o javaScript -->
+    </div>
+    <div class="balaoDePergunta">
+        <p class="Pergunta" id="pergunta">A pergunta aparecerá aqui</p>
+    </div>
+    <div class="personagem">
+        <img src="../assents/Imagens/CharacterMedical.png" alt="Personagem Médico" class="Character">
+    </div>
+
+    <button id="ReinicarBtn" class="escondida">Reiniciar</button>
+    <script src="Quest.js"></script>
 </body>
 
 </html>

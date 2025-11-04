@@ -1,1 +1,2 @@
 # MindCheck
+MindCheck é um simulador de formulário médico. Responda a uma série de perguntas e receba um resultado baseado em suas respostas. Atenção: É apenas uma simulação sem envolvimento de profissionais de saúde; o resultado não é um diagnóstico e não deve ser levado como verdade absoluta.

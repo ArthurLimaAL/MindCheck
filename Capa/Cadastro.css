@@ -8,7 +8,7 @@
 
 body {
     position: relative;
-    background-image: linear-gradient(#82d9ff, rgb(30, 150, 255));
+    background-image: linear-gradient(#82d9ff, rgb(104, 185, 255));
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@ body {
 .CaixaBoasVindas,
 .CaixaDoFormulário,
 .CaixaDoLogin {
-    background-color: rgb(12, 146, 255);
+    background-color: rgb(27, 167, 255);
     width: 100%;
     max-width: 50rem;
     min-height: 30rem;
@@ -44,8 +44,7 @@ body {
     margin: 0 auto;
     overflow: hidden;
     padding: 2rem 1rem;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.384);
-
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.247);
     opacity: 1;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     position: fixed;
@@ -71,6 +70,7 @@ body {
     color: aliceblue;
     margin-top: 1rem;
     padding: 0 1rem;
+    font-size: 1.3em;
     font-family: "Instrument Serif", serif;
     font-weight: 400;
     font-style: italic;
@@ -189,7 +189,7 @@ body {
     min-height: 20px;
 }
 
-/* === animação de carregamento === */
+/* ======== animação de carregamento ======== */
 
 .carregamento {
     position: fixed;
