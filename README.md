@@ -4,4 +4,4 @@ MindCheck é um simulador de formulário médico. Responda a uma série de pergu
 # Deploy
 Teste a versão em deploy de forma gratuita:
 
-https://mind-check-gpdhgm2zj-arthurlimaals-projects.vercel.app/
+https://mind-check-delta.vercel.app/
