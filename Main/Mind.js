@@ -47,6 +47,6 @@ function IrParaQuest(destino){
     }, 2000);
 }
 
-BotaoIniciar    .addEventListener('click', function(e) {
+BotaoIniciar.addEventListener('click', function(e) {
     IrParaQuest('../Questionario/Quest.html');
 });

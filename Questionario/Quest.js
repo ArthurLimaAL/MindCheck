@@ -94,6 +94,7 @@ let indiceAtual = 0;
 const elementoPergunta = document.getElementById("pergunta");
 const caixaRespostas = document.getElementById("caixRespostas");
 const botaoReiniciar = document.getElementById("ReinicarBtn");
+const botaoMenu = document.getElementById("MenuBtn");
 
 
 // Mensagens que aparecem no resultado final
@@ -139,6 +140,7 @@ function mostrarPergunta() {
       caixaRespostas.appendChild(divResposta);
     });
 
+    botaoMenu.classList.add("escondida");
     botaoReiniciar.classList.add("escondida");
 
   } else {
@@ -166,8 +168,9 @@ function mostrarPergunta() {
       caixaRespostas.innerHTML = mensagensResultado[diagnostico];
     }
 
-    // Mostra o botão de Reiniciar
+    // Mostra o botão de Reiniciar e Menu
     botaoReiniciar.classList.remove("escondida");
+    botaoMenu.classList.remove("escondida");
   }
 }
 
@@ -178,6 +181,18 @@ function selecionarResposta(valor, doenca_foco) {
   indiceAtual++;
   mostrarPergunta();
 }
+
+//Função de voltar ao menu
+function Menu(destino){
+  
+  setTimeout(() => {
+    window.location.href = destino;
+  })
+}
+
+botaoMenu.addEventListener('click', function(e){
+  Menu('../Main/Mind.html')
+})
 
 // Função de Reinínicar
 function reiniciarQuestionario() {
