@@ -13,7 +13,6 @@ function MostrarCads() {
 
 }
 
-
 function Voltar() {
 
     Tela2.classList.replace('visible', 'escondida');
@@ -37,84 +36,6 @@ function MostrarLog() {
     Tela3.classList.replace('escondida', 'visible');
 }
 
-
-//Aparecer uma mensagem caso o input não for preenchido
-document.getElementById('LogForm').addEventListener('submit', function (e) {
-
-    const input = document.getElementById('nomelog');
-    const mensagemError = document.getElementById('mensagemErro');
-
-    mensagemError.textContent = '';
-
-    if (input.value.trim() === '') {
-        e.preventDefault();
-        mensagemError.textContent = 'Preencha o nome!';
-        input.focus();
-    }
-})
-
-document.getElementById('LogForm').addEventListener('submit', function (e) {
-
-    const input = document.getElementById('senhaLog');
-    const mensagemError = document.getElementById('mensagemErroSenha');
-
-    mensagemError.textContent = '';
-
-    if (input.value.trim() === '') {
-        e.preventDefault();
-        mensagemError.textContent = 'Coloque sua senha!';
-        input.focus();
-    }
-})
-
-document.getElementById('formCadastro').addEventListener('submit', function (e) {
-
-    const input = document.getElementById('nomeCadastro');
-    const ErroMensagem = document.getElementById('ErroCadastro');
-
-    if (input.value.trim() === '') {
-        e.preventDefault();
-        ErroMensagem.textContent = 'Preencha esse campo!'
-        input.focus();
-    }
-})
-
-document.getElementById('formCadastro').addEventListener('submit', function (e) {
-
-    const input = document.getElementById('idadeCadastro');
-    const ErroMensagem = document.getElementById('ErroIdade');
-
-    if (input.value.trim() === '') {
-        e.preventDefault();
-        ErroMensagem.textContent = 'Preencha esse campo!'
-        input.focus();
-    }
-})
-
-document.getElementById('formCadastro').addEventListener('submit', function (e) {
-
-    const input = document.getElementById('emailCadastro');
-    const ErroMensagem = document.getElementById('ErroEmail');
-
-    if (input.value.trim() === '') {
-        e.preventDefault();
-        ErroMensagem.textContent = 'Preencha esse campo!'
-        input.focus();
-    }
-})
-
-document.getElementById('formCadastro').addEventListener('submit', function (e) {
-
-    const input = document.getElementById('senhaCadastro');
-    const ErroMensagem = document.getElementById('ErroSenha');
-
-    if (input.value.trim() === '') {
-        e.preventDefault();
-        ErroMensagem.textContent = 'Preencha esse campo!'
-        input.focus();
-    }
-})
-
 //Tela de carregamento
 function mostrarTelaCarregamentoERedirecionar(destino) {
     Tela1.classList.add('escondida');
@@ -127,21 +48,36 @@ function mostrarTelaCarregamentoERedirecionar(destino) {
     }, 2000);
 }
 
-// Formulário de Cadastro
-document.getElementById('formCadastro').addEventListener('submit', function (e) {
-    e.preventDefault();
+//Cadastrar
 
-    const nome = document.getElementById('nomeCadastro').value.trim();
-    const email = document.getElementById('emailCadastro').value.trim();
-    const senha = document.getElementById('senhaCadastro').value.trim();
-    const idade = document.getElementById('idadeCadastro').value.trim();
+function Cadastrar() {
 
-    if (!nome || !email || !senha || !idade) {
-        return; 
+    event.preventDefault();
+
+    const Nome = document.getElementById("nomeCadastro").value.trim();
+    const Idade = document.getElementById("idadeCadastro").value.trim();
+    const Email = document.getElementById('emailCadastro').value.trim();
+    const Senha = document.getElementById('senhaCadastro').value.trim();
+
+    const MensagemSenhaNome = document.getElementById("MensagemSenhaNome");
+
+
+    if (!Nome || !Idade || !Email || !Senha) {
+        alert('Existem campos que não foram preenchidos!');
+        return;
     }
 
+    const usuario = {
+        Nome,
+        Idade,
+        Email,
+        Senha
+    }
+
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+
     mostrarTelaCarregamentoERedirecionar('../Main/Mind.html');
-});
+}
 
 // Formulário de Login
 document.getElementById('LogForm').addEventListener('submit', function (e) {
@@ -151,7 +87,8 @@ document.getElementById('LogForm').addEventListener('submit', function (e) {
     const senha = document.getElementById('senhaLog').value.trim();
 
     if (!nome || !senha) {
-        return; 
+        alert('Existem campos que não foram preenchidos!');
+        return;
     }
 
     mostrarTelaCarregamentoERedirecionar('../Main/Mind.html');

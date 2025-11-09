@@ -37,24 +37,24 @@
             <form id="formCadastro">
                 <label for="nomeCadastro">Nome:</label>
                 <input type="text" id="nomeCadastro" placeholder="Insira seu nome">
-                <div id="ErroCadastro" class="erro"></div>
 
                 <label for="idadeCadastro">Idade:</label>
-                <input type="number" id="idadeCadastro" placeholder="Idade" min="1" max="120">
-                <div id="ErroIdade" class="erro"></div>
+                <input type="number" id="idadeCadastro" placeholder="Idade" min="1" max="110">
+             
 
                 <label for="emailCadastro">Email:</label>
                 <input type="email" id="emailCadastro" placeholder="Insira seu email">
-                <div id="ErroEmail" class="erro"></div>
+              
 
                 <label for="senhaCadastro">Senha:</label>
                 <input type="password" id="senhaCadastro" name="senha" maxlength="4" placeholder="Insira sua senha">
-                <div id="ErroSenha" class="erro"></div>
+                
+
             </form>
         </div>
         <div class="BotoesF">
             <button type="button" onclick="Voltar()">Voltar</button>
-            <button type="submit" form="formCadastro">Inscrever-se</button>
+            <button type="submit" form="formCadastro" onclick="Cadastrar()">Inscrever-se</button>
         </div>
     </div>
 
@@ -66,11 +66,11 @@
             <form id="LogForm">
                 <label for="nomelog">Nome:</label>
                 <input type="text" placeholder="Insira seu nome" id="nomelog">
-                <div id="mensagemErro" class="erro"></div>
+               
 
                 <label for="senhaLog">Senha:</label>
                 <input type="password" name="senha" placeholder="Insira sua senha" id="senhaLog" maxlength="4">
-                <div id="mensagemErroSenha" class="erro"></div>
+                
             </form>
         </div>
 

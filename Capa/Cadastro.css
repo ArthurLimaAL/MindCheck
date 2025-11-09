@@ -39,11 +39,11 @@ body {
     background-color: rgb(27, 167, 255);
     width: 100%;
     max-width: 50rem;
-    min-height: 30rem;
+    min-height: auto;
     border-radius: 25px;
     margin: 0 auto;
     overflow: hidden;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.247);
     opacity: 1;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -86,6 +86,7 @@ body {
 }
 
 .Botoes button {
+    color: #003d57;
     padding: 12px 24px;
     border-radius: 10px;
     cursor: pointer;
@@ -93,6 +94,10 @@ body {
     transition: background-color 0.2s;
     background-color: rgb(191, 211, 255);
     font-weight: bold;
+    font-family: "Parkinsans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .Botoes button:hover {
@@ -167,6 +172,7 @@ body {
 
 .BotoesF button,
 .BotoesL button {
+    color: #003d57;
     background-color: rgb(191, 211, 255);
     padding: 12px 24px;
     border-radius: 10px;
@@ -180,13 +186,6 @@ body {
 .BotoesL button:hover {
     background-color: rgb(182, 239, 255);
 
-}
-
-.erro {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-    min-height: 20px;
 }
 
 /* ======== animação de carregamento ======== */
@@ -203,8 +202,6 @@ body {
     align-items: center;
     z-index: 9999;
 }
-
-
 
 .carregando {
     width: 80px;
