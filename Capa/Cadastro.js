@@ -19,14 +19,6 @@ function Voltar() {
     Tela3.classList.replace('visible', 'escondida');
     Tela1.classList.replace('escondida', 'visible');
     Tela4.classList.replace('visible', 'escondida');
-
-    document.getElementById('ErroCadastro').textContent = '';
-    document.getElementById('ErroIdade').textContent = '';
-    document.getElementById('ErroEmail').textContent = '';
-    document.getElementById('ErroSenha').textContent = '';
-
-    document.getElementById('mensagemErro').textContent = '';
-    document.getElementById('mensagemErroSenha').textContent = '';
 }
 
 function MostrarLog() {
@@ -59,8 +51,6 @@ function Cadastrar() {
     const Email = document.getElementById('emailCadastro').value.trim();
     const Senha = document.getElementById('senhaCadastro').value.trim();
 
-    const MensagemSenhaNome = document.getElementById("MensagemSenhaNome");
-
 
     if (!Nome || !Idade || !Email || !Senha) {
         alert('Existem campos que não foram preenchidos!');
@@ -79,8 +69,37 @@ function Cadastrar() {
     mostrarTelaCarregamentoERedirecionar('../Main/Mind.html');
 }
 
+//Login
+
+function Login(evento) {
+    evento.preventDefault();
+
+    const nome = document.getElementById("nomelog").value.trim();
+    const senha = document.getElementById("senhaLog").value.trim(); 
+
+    if (!nome || !senha) {
+        alert('Por favor, preencha o nome e a senha.');
+        return;
+    }
+    
+    const usuarioSalvoJSON = localStorage.getItem('usuario');
+
+    if (!usuarioSalvoJSON) {
+        alert('Nenhum usuário encontrado. Por favor, cadastre-se primeiro.');
+        return;
+    }
+
+    const usuarioSalvo = JSON.parse(usuarioSalvoJSON);
+
+    if (usuarioSalvo.Nome === nome && usuarioSalvo.Senha === senha) {
+        mostrarTelaCarregamentoERedirecionar('../Main/Mind.html');
+    } else {
+        alert('Nome de usuário ou senha incorretos. Tente novamente.');
+    }
+}
+
 // Formulário de Login
-document.getElementById('LogForm').addEventListener('submit', function (e) {
+/* document.getElementById('LogForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const nome = document.getElementById('nomelog').value.trim();
@@ -92,4 +111,4 @@ document.getElementById('LogForm').addEventListener('submit', function (e) {
     }
 
     mostrarTelaCarregamentoERedirecionar('../Main/Mind.html');
-});
+}); */
