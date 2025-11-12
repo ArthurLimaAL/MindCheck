@@ -23,34 +23,39 @@ body {
     background: linear-gradient(180deg, #82d9ff 0%, #c1e2ff 100%);
     min-height: 100vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 2rem;
     font-family: Arial, sans-serif;
     gap: 3rem;
+    flex-wrap: wrap;
 }
 
 .caixRespostas {
     background-color: #f5f5f5;
-    width: 420px;
+    width: 100%;
+    max-width: 420px;
     border-radius: 25px;
     padding: 3rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    order: 2;
+    position: relative;
+    z-index: 10;
 }
 
 .Resposta1,
 .Resposta2,
 .Resposta3,
 .Resposta4 {
-    background-color: #a8c4e0;
+    background-color: #a7d0f8;
     border-radius: 25px;
     text-align: center;
     padding: 1rem 2rem;
     color: #00081a;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     cursor: pointer;
     font-family: "DM Mono", monospace;
     font-weight: 500;
@@ -62,40 +67,68 @@ body {
 .Resposta2:hover,
 .Resposta3:hover,
 .Resposta4:hover {
-    background-color: #98b8d4;
+    background-color: #70aee4;
 }
 
 .personagem {
+    background-image: url(../assents/Imagens/CharacterMedical.png);
+    height: 400px;
+    width: 400px;
+    max-width: 90vw;
+    background-position: center -2px;
+    background-size: 350px;
+    background-repeat: no-repeat;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    margin-left: -15rem;
-    left: 14rem;
+    justify-content: flex-start;
     background-color: aliceblue;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.178);
     border-radius: 20px;
+    padding-top: 2rem;
+    order: 1;
+}
+
+.personagem2 {
+    background-image: url(../assents/Imagens/CharacterMedical2.1.png);
+    height: 400px;
+    width: 400px;
+    max-width: 90vw;
+    background-position: center -2px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: aliceblue;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding-top: 2rem;
+    order: 1;
 }
 
 .balaoDePergunta {
+    text-align: center;
     background-color: #ffffff;
-    border-radius: 25px;
-    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    max-width: 85%;
+    width: 100%;
     position: relative;
-    max-width: 500px;
-    margin-bottom: 2rem;
-    position: relative;
-    top: -10rem;
+    z-index: 5;
 }
 
 .Pergunta {
-    font-size: 1.3rem;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
     color: #000;
     font-family: "Fira Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
+    line-height: 1.4;
 }
 
 .Character {
@@ -107,20 +140,21 @@ body {
 .caixRespostas h2 {
     margin-bottom: 1rem;
     color: #0056b3;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 
 .caixRespostas p {
     margin-bottom: 1rem;
     line-height: 1.5;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .caixRespostas strong {
     color: #0056b3;
 }
 
-#ReinicarBtn {
-
+#ReinicarBtn,
+#MenuBtn {
     border: none;
     background-color: #00aeff;
     border-radius: 0.625rem;
@@ -129,22 +163,154 @@ body {
     transition: background-color 0.2s;
     color: white;
     font-size: clamp(0.9rem, 2vw, 1.1rem);
-    position: relative;
-    left: -38rem;
-    top: 13rem;
+    position: fixed;
+    bottom: 2rem;
+    z-index: 100;
+}
+
+#ReinicarBtn:hover,
+#MenuBtn:hover {
+    background-color: #0088cc;
+}
+
+#ReinicarBtn {
+    right: 2rem;
 }
 
 #MenuBtn {
+    left: 2rem;
+}
 
-    border: none;
-    background-color: #00aeff;
-    border-radius: 0.625rem;
-    padding: 0.75rem 1.25rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    color: white;
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    position: relative;
-    left: -41rem;
-    top: 13rem;
+/* Media Queries para Responsividade */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+    body {
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .personagem,
+    .personagem2 {
+        height: 350px;
+        width: 350px;
+    }
+
+    .balaoDePergunta {
+        padding: 1rem 1.2rem;
+    }
+
+    .caixRespostas {
+        padding: 2rem 1.5rem;
+        max-width: 380px;
+    }
+}
+
+/* Smartphones e telas pequenas */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+        justify-content: flex-start;
+        padding-top: 4rem;
+        padding-bottom: 6rem;
+    }
+
+    .personagem,
+    .personagem2 {
+        height: 300px;
+        width: 300px;
+        margin-bottom: 1rem;
+    }
+
+    .balaoDePergunta {
+        padding: 0.9rem 1.2rem;
+        max-width: 90%;
+    }
+
+    .caixRespostas {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .Resposta1,
+    .Resposta2,
+    .Resposta3,
+    .Resposta4 {
+        padding: 0.8rem 1.5rem;
+    }
+
+    #ReinicarBtn,
+    #MenuBtn {
+        padding: 0.6rem 1rem;
+        bottom: 1rem;
+    }
+
+    #ReinicarBtn {
+        right: 1rem;
+    }
+
+    #MenuBtn {
+        left: 1rem;
+    }
+}
+
+/* Smartphones pequenos */
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+        gap: 1rem;
+    }
+
+    .personagem,
+    .personagem2 {
+        height: 280px;
+        width: 280px;
+    }
+
+    .balaoDePergunta {
+        padding: 0.8rem 1rem;
+        max-width: 90%;
+    }
+
+    .caixRespostas {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+    }
+
+    .Resposta1,
+    .Resposta2,
+    .Resposta3,
+    .Resposta4 {
+        padding: 0.7rem 1rem;
+        border-radius: 20px;
+    }
+
+    #ReinicarBtn,
+    #MenuBtn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 360px) {
+
+    .personagem,
+    .personagem2 {
+        height: 240px;
+        width: 240px;
+    }
+
+    .balaoDePergunta {
+        padding: 0.8rem;
+    }
+
+    .caixRespostas {
+        padding: 1.2rem 0.8rem;
+    }
 }

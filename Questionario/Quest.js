@@ -156,7 +156,7 @@ function mostrarPergunta() {
 
     elementoPergunta.textContent = `Você concluiu o questionário!`;
 
-    // Se a pontuação máxima for zero, ou muito baixa, o resultado será neutro
+    // Se a pontuação máxima for zero ou muito baixa, o resultado será neutro
     if (pontuacaoMaxima < 5) {
       caixaRespostas.innerHTML = `
               <h2>Resultado: Baixo Risco</h2>
@@ -171,6 +171,7 @@ function mostrarPergunta() {
     // Mostra o botão de Reiniciar e Menu
     botaoReiniciar.classList.remove("escondida");
     botaoMenu.classList.remove("escondida");
+    document.getElementById('MedialCharacter').classList.replace('personagem', 'personagem2')
   }
 }
 
@@ -204,6 +205,7 @@ function reiniciarQuestionario() {
 
   caixaRespostas.classList.add("visible");
   caixaRespostas.classList.remove("escondida");
+  document.getElementById('MedialCharacter').classList.replace('personagem2', 'personagem');
 
   mostrarPergunta();
 }
