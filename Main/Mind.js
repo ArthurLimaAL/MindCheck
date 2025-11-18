@@ -30,7 +30,7 @@ function FeedbackEnviar() {
     }
 
     document.getElementById('InputFeedback').value = "";
-    alert("Enviado");  // Alerta de enviado
+    alert("Agradeçemos pelo seu feedback!");  // Alerta de enviado
 }
 
 //Iniciando o questionário
