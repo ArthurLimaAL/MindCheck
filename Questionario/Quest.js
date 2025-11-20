@@ -97,7 +97,7 @@ const botaoReiniciar = document.getElementById("ReinicarBtn");
 const botaoMenu = document.getElementById("MenuBtn");
 
 
-// Mensagens que aparecem no resultado final
+// Objeto de mensagens que aparecem no resultado final
 const mensagensResultado = {
   Depressao: `
       <h2>Resultado: Indícios de Depressão</h2>
@@ -175,7 +175,7 @@ function mostrarPergunta() {
   }
 }
 
-//Fluxo do questionário
+//Fluxo de soma no questionário
 function selecionarResposta(valor, doenca_foco) {
   doencas[doenca_foco] += valor;
 

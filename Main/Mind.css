@@ -73,8 +73,9 @@ main {
 .CaixaPrincipal p {
     text-align: center;
     font-size: 1.5em;
-    font-family: "Playwrite US Modern", cursive;
-    font-weight: 400;
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
     font-style: normal;
     margin-bottom: 0.5rem;
 }
@@ -136,7 +137,7 @@ main {
 }
 
 .Extras {
-    max-width: 1500px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
     background-color: rgba(0, 23, 58, 0.486);
@@ -286,6 +287,34 @@ main {
 }
 
 @media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        gap: 30px;
+        padding: 15px;
+        width: 95%;
+    }
+
+    .CaixaPrincipal {
+        max-width: 100%;
+        width: 100%;
+        padding: 20px 15px;
+        order: 1;
+    }
+
+    .CaixaPrincipal p {
+        font-size: 1.2em;
+    }
+
+    .ImagemPrincipal {
+        order: 2;
+        width: 100%;
+    }
+
+    .ImagemPrincipal img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
     .Extras h1 {
         font-size: 2rem;
     }
@@ -299,5 +328,16 @@ main {
 
     .Extras {
         padding: 15px;
+        width: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    header img {
+        height: 60px;
     }
 }

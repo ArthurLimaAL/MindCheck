@@ -41,7 +41,6 @@ function mostrarTelaCarregamentoERedirecionar(destino) {
 }
 
 //Cadastrar
-
 function Cadastrar() {
 
     event.preventDefault();
@@ -70,7 +69,6 @@ function Cadastrar() {
 }
 
 //Login
-
 function Login(evento) {
     evento.preventDefault();
 
@@ -97,18 +95,3 @@ function Login(evento) {
         alert('Nome de usuário ou senha incorretos. Tente novamente.');
     }
 }
-
-// Formulário de Login
-/* document.getElementById('LogForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const nome = document.getElementById('nomelog').value.trim();
-    const senha = document.getElementById('senhaLog').value.trim();
-
-    if (!nome || !senha) {
-        alert('Existem campos que não foram preenchidos!');
-        return;
-    }
-
-    mostrarTelaCarregamentoERedirecionar('../Main/Mind.html');
-}); */
