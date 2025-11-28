@@ -26,6 +26,9 @@ Experimente o MindCheck diretamente no seu navegador:
 
 https://mind-check-delta.vercel.app/
 
+# Documentação
+[Documentação MindCheck.pdf](https://github.com/user-attachments/files/23657306/Documentacao.MindCheck.pdf)
+
 # Membros
 
 Arthur Lima (ArthurLimaAL)
